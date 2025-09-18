@@ -1,0 +1,54 @@
+name: mcp-reddit
+image: mcp/mcp-reddit
+type: server
+meta:
+  category: social
+  tags:
+    - social
+    - reddit
+    - api
+    - community
+about:
+  title: Reddit MCP Server
+  description: A comprehensive Model Context Protocol server for Reddit integration. Enables AI agents to interact with Reddit programmatically through a standardized interface.
+  icon: https://www.redditstatic.com/desktop2x/img/favicon/favicon-32x32.png
+source:
+  project: https://github.com/KrishnaRandad2023/mcp-reddit
+config:
+  description: Configure Reddit API credentials for authentication
+  secrets:
+    - name: mcp-reddit.reddit_client_secret
+      env: REDDIT_CLIENT_SECRET
+      example: <YOUR_REDDIT_CLIENT_SECRET>
+    - name: mcp-reddit.reddit_password
+      env: REDDIT_PASSWORD
+      example: <YOUR_REDDIT_PASSWORD>
+  env:
+    - name: REDDIT_CLIENT_ID
+      example: YOUR_CLIENT_ID_HERE
+      value: '{{mcp-reddit.reddit_client_id}}'
+    - name: REDDIT_USERNAME
+      example: your_reddit_username
+      value: '{{mcp-reddit.reddit_username}}'
+    - name: REDDIT_USER_AGENT
+      example: mcp-reddit-agent/0.1
+      value: '{{mcp-reddit.reddit_user_agent}}'
+  parameters:
+    type: object
+    properties:
+      reddit_client_id:
+        type: string
+        title: Reddit Client ID
+        description: Your Reddit app client ID from https://www.reddit.com/prefs/apps
+      reddit_username:
+        type: string
+        title: Reddit Username
+        description: Your Reddit username
+      reddit_user_agent:
+        type: string
+        title: User Agent
+        description: User agent string for API requests
+        default: mcp-reddit-agent/0.1
+    required:
+      - reddit_client_id
+      - reddit_username

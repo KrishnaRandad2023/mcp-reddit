@@ -14,7 +14,11 @@ RUN pip install --no-cache-dir --user -r requirements.txt
 FROM python:3.11-slim
 
 # Add MCP server name label for registry validation
-LABEL io.modelcontextprotocol.server.name="reddit-mcp"
+LABEL io.modelcontextprotocol.server.name="mcp-reddit"
+LABEL org.opencontainers.image.title="Reddit MCP Server"
+LABEL org.opencontainers.image.description="Model Context Protocol server for Reddit integration"
+LABEL org.opencontainers.image.source="https://github.com/KrishnaRandad2023/mcp-reddit"
+LABEL org.opencontainers.image.licenses="MIT"
 
 # Set working directory
 WORKDIR /app

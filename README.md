@@ -34,8 +34,8 @@ This MCP server provides 6 powerful tools for Reddit interaction:
 
 ```bash
 # Clone the repository
-git clone https://github.com/<my-org>/reddit-mcp
-cd reddit-mcp
+git clone https://github.com/KrishnaRandad2023/mcp-reddit
+cd mcp-reddit
 
 # Build the Docker image
 make build
