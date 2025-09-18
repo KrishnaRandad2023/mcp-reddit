@@ -1,0 +1,68 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-07-09/server.schema.json",
+  "name": "io.github.my-org/reddit-mcp",
+  "description": "Reddit MCP server for API interactions: fetch posts, search, comments, and submissions",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/<my-org>/reddit-mcp",
+    "source": "github",
+    "id": "<my-org>/reddit-mcp"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registry_type": "oci",
+      "registry_base_url": "https://docker.io",
+      "identifier": "mcp/reddit-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environment_variables": [
+        {
+          "name": "REDDIT_CLIENT_ID",
+          "description": "Reddit application client ID",
+          "is_required": true,
+          "is_secret": false
+        },
+        {
+          "name": "REDDIT_CLIENT_SECRET",
+          "description": "Reddit application client secret",
+          "is_required": true,
+          "is_secret": true
+        },
+        {
+          "name": "REDDIT_USERNAME",
+          "description": "Reddit username for authentication",
+          "is_required": true,
+          "is_secret": false
+        },
+        {
+          "name": "REDDIT_PASSWORD",
+          "description": "Reddit password for authentication",
+          "is_required": true,
+          "is_secret": true
+        },
+        {
+          "name": "REDDIT_USER_AGENT",
+          "description": "User agent string for Reddit API requests",
+          "is_required": false,
+          "is_secret": false,
+          "default": "mcp-reddit-agent/0.1"
+        }
+      ]
+    }
+  ],
+  "website_url": "https://github.com/<my-org>/reddit-mcp",
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "tool": "docker-buildx",
+      "version": "0.1.0",
+      "build_info": {
+        "timestamp": "2025-01-18T12:00:00Z",
+        "platform": "linux/amd64,linux/arm64",
+        "registry": "docker.io"
+      }
+    }
+  }
+}
