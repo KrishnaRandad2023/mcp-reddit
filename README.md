@@ -451,4 +451,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **Ready for MCP Registry Submission** 🚀
 
-This server is fully configured and ready to be submitted to the official Docker MCP Registry following all contribution guidelines.
+
